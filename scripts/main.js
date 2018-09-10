@@ -29,6 +29,7 @@
 	});
 	
 	formHandler.addInputHandler(Validation.isCompanyEmail);
+	formHandler.RangeShowNumberHadler();
 	
 	myTruck.printOrders(checkList.addRow.bind(checkList));
 })(window);

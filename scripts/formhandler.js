@@ -46,6 +46,39 @@
 		});
 	};
 	
+	FormHandler.prototype.RangeShowNumberHadler = function () {
+		var range = this.$formElement.find('#strengthLevel');
+		var rangeValue = $('.range-value');
+		
+		rangeValue.text(range.val()).css({color: 'gray'});
+
+		range.on('change', function (e) {
+			console.log(this.value);
+
+			rangeValue.text(this.value);
+
+			if (this.value > 33) {
+				rangeValue.css({
+					color: 'orange'
+				});
+				if (this.value > 66) {
+					rangeValue.css({
+						color: 'brown'
+					});
+				}
+				if (this.value > 90) {
+					rangeValue.css({
+						color: 'black'
+					});
+				}
+			} else {
+				rangeValue.css({
+					color: 'gray'
+				});
+			}
+		});
+	}
+	
 	App.FormHandler = FormHandler;
 	window.App = App;
 })(window);
